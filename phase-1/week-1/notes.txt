@@ -1,0 +1,1 @@
+Why am I learning backend engineering? THis means I will get to build real systems, understand there workflow processes and familiarize myself with the inner workings of a system. Backend systems are the backbone of entire systems, from how they work to how they fail, everything lies with the backend.

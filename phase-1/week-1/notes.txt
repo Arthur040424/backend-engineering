@@ -1,1 +1,24 @@
-Why am I learning backend engineering? THis means I will get to build real systems, understand there workflow processes and familiarize myself with the inner workings of a system. Backend systems are the backbone of entire systems, from how they work to how they fail, everything lies with the backend.
+Why am I learning backend engineering?
+This means I will get to build real systems, understand there workflow processes and familiarize myself with the inner workings of a system. Backend systems are the backbone of entire systems, from how they work to how they fail, everything lies with the backend.
+
+Why permissions exist in the first place? 
+The linux system can have many users. Permissions is how the system decides who is allowed to do what to do what to which files. Without permissions, any user on the mission could read, modify or delete someone else's file, including system files.
+
+When you type https://github.com into your browser and press Enter — what actually happens before the page appears?
+1. The browser needs to find Github's address, it will look up the ip address of github.com
+2. The browser opens a connection to that address. A Transmission Control Protocol allows the communication between the browser and the server to be established.
+3. Because it is HTTPS, they do a security handshake. A Transport Layer Security handshake, this means that the browser and the server agree on how to encrypt the communication so nobody in between can read it.
+4. The browser sends a HTTP request to the server, in this case, it'll be a GET request
+5. Github's server sends back a HTTP response, the response includes a status code indicating what has occured. (e.g 200 -OK, 500 - Server error)
+6. The browser renders the page. It receives the html and shows the page on the browser
+DNS lookup - TCP Connection - TLS handshake - HTTP request.
+
+
+Host github.com:443 was resolved - the DNS resolution was successfully resolved, transforming the name to it's IP address
+
+TLSv1.3 (OUT), TLS handshake, Client hell, TLSv1.3 (IN), TLS handshake, Server hello - machine says hello, github says hello back, the agreement to encrypt the communication between the server and the browser.
+SSL certificate verify ok - the certificate is secure and verified correctly
+[HTTP/2] [:method: GET] - acquiring the source
+[HTTP/2] [:path: /] - it shows the main root page
+
+When you search for https://github.com, the browser converts it into numbers since the computers cannot understand human language. The numbers is the ip address ( like a home address) where the server hosting or that is responsible for showing github.com is located. The browser on your screen, it then talks to the server where github.com is, after it receives a response, that means a channel or connection will be made. They will then agree to encrypt (secure, for it to be a secret) the data so as to not be read in between. The browser sends a request telling the server as to what it wants, the server will then respond back with what has occurred, whether it has succeeded or not. The browser then finally shows what you see on the screen, the github landing page.

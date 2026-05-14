@@ -1,5 +1,5 @@
 Why am I learning backend engineering?
-This means I will get to build real systems, understand there workflow processes and familiarize myself with the inner workings of a system. Backend systems are the backbone of entire systems, from how they work to how they fail, everything lies with the backend.
+This means I will get to build real systems, understand there workflow processes and familiarize myself with the inner workings of a system. Backend systems are the backbone of entire systems, even the Artificial Inteligence, from how they work to how they fail, everything lies with the backend.
 
 Why permissions exist in the first place? 
 The linux system can have many users. Permissions is how the system decides who is allowed to do what to do what to which files. Without permissions, any user on the mission could read, modify or delete someone else's file, including system files.
@@ -22,3 +22,13 @@ SSL certificate verify ok - the certificate is secure and verified correctly
 [HTTP/2] [:path: /] - it shows the main root page
 
 When you search for https://github.com, the browser converts it into numbers since the computers cannot understand human language. The numbers is the ip address ( like a home address) where the server hosting or that is responsible for showing github.com is located. The browser on your screen, it then talks to the server where github.com is, after it receives a response, that means a channel or connection will be made. They will then agree to encrypt (secure, for it to be a secret) the data so as to not be read in between. The browser sends a request telling the server as to what it wants, the server will then respond back with what has occurred, whether it has succeeded or not. The browser then finally shows what you see on the screen, the github landing page.
+
+So, how a server works. The server that I have just built:
+First of all, the server is always listening to a specified port, in this case, it is port 8000. It says, when a request comes on port 8000, notify me immediately. So, it is always listening for requests. When somebody visits a routing, let's say "http://localhost:8000", it immediately receives the request and sends back a response, a status code of 200 means the request and the response were transmitted successfully, this means it is OK, so, that is in that route, a response will be returned, in this case "Hello from Arthur's server." When the route is /about it will return what is specified in the server, but if a route that has been stated is not found in the server, it will return error 404, not found. The server is always running and can only be stopped manually.
+
+I built a raw http server in python for the first time. The server was on port 8000 and after starting it, it was constantly listening requests that would come and arrive at the port, then immediately send out a response depending on what request has been received
+I dunno if I should say things broke, but, yeah, I guess some things broke while writing the few lines of code of starting the http server. There was standalone functions that I was setting up but ended writing it inside my class, which caused the server to not function properly, I fixed it by writing it outside of the class hence becoming a standalone instead of a class method. 
+I was able to understand how and what happens from the moment something is looked up on the internet. From the DNS lookup, TCP Connection, TLS handshake and finally the HTTP request and HTTP response. I also understood why the linux system contain permissions, it decides who is allowed to do what to which files and folders.
+New terms learned were TLS handshake(Transport Layer Security) - When the browser and the server come to an agreement on encrypting their communication.
+A TCP(Transmission Control Protocol) -  Allows a connection to be established between the browser and the server.
+DNS Lookup - The computer does not understand human language, so it looks up for the IP address of the domain name of the specified search.

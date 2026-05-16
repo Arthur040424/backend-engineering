@@ -2,7 +2,9 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 # first line fetches the HTTPServer and BaseHTTPRequestHandler from the http.server dictionary
 
 def get_greeting():
-    return "Hello from Arthur's server"
+    with open('content.txt', 'r', encoding="utf-8") as f:
+        read_data =  f.read()
+        return read_data
 class MyHandler(BaseHTTPRequestHandler): #Creates a class called 
     def do_GET(self): # defines a function named do_GET
         '''self refers to the particular instance handling that request'''

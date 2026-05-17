@@ -38,3 +38,23 @@ What does the with statement do? Why is it better than just calling open() direc
 The with statement enables the file that has been read from to be properly closed after being read from. If open() is just called, the file that is read from will only remain open and will not be closed, unless we add an f.close() property at the end. If content.txt is deleted and the I happen to hit the / route, it will return a FileNotFoundError: No such file or directory: 'content.txt' error.
 
 hash map - a data structure where every value has a unique key, and lookup by key is instant regardless of how many items are in it.
+
+.get("zzz000") → None
+.get("zzz000", "not found") → not found
+.get("abc123", "not found") → https://google.com
+ what you think .get() is doing differently from short_codes["zzz000"]?
+ .get() never crashes. When the key exists, it returns the value, and if the key does not exist, it does not crash, but instead, it returns something safe.
+ When a fallback is not provided, it returns None, but if provided, it will return what is there.
+ 
+When it comes to storing data in a python dictionary, this means that it cannot survive a restart. This is because, variables store their data in the memory, so, it only runs when it is needed, it is retrieved from the memory. But when it comes to storing it in a database, that means it can survive a restart. It won't disappear even after a restart, it will still exist.
+ 
+ Data that survives a restart is called - "persistence"
+ 
+What is a database and why does it exist?
+A database is some sort of a storage system that is used to store data. It is used for retrieving of data and sending it where it is needed. It organizes data into tables and rows and enforces structure.
+
+What does SQL stand for and what is it used for?
+SQL - Structured Query Language. It is used to design the database schema. It is the language used for creating, inserting, selecting, editing, updating and deleting data.
+
+What do you think CREATE TABLE, INSERT, and SELECT might do — based on the words alone, before you look anything up?
+'CREATE TABLE' It brings a table into existence. 'INSERT' this means it puts data into an empty table. 'SELECT' This allows for the table specified to be viewed, all the rows and columns and seeing what data is stored in there.

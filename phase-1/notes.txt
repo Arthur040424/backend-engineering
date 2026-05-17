@@ -32,3 +32,9 @@ I was able to understand how and what happens from the moment something is looke
 New terms learned were TLS handshake(Transport Layer Security) - When the browser and the server come to an agreement on encrypting their communication.
 A TCP(Transmission Control Protocol) -  Allows a connection to be established between the browser and the server.
 DNS Lookup - The computer does not understand human language, so it looks up for the IP address of the domain name of the specified search.
+
+
+What does the with statement do? Why is it better than just calling open() directly? What would happen if you deleted content.txt and then hit the / route?
+The with statement enables the file that has been read from to be properly closed after being read from. If open() is just called, the file that is read from will only remain open and will not be closed, unless we add an f.close() property at the end. If content.txt is deleted and the I happen to hit the / route, it will return a FileNotFoundError: No such file or directory: 'content.txt' error.
+
+hash map - a data structure where every value has a unique key, and lookup by key is instant regardless of how many items are in it.

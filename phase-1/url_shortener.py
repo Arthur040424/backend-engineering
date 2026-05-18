@@ -1,9 +1,24 @@
-url_map = {"aaa111": "https://google.com", "bbb222": "https://github.com", "ccc333": "https://chatgpt.com"}
+import psycopg2
+
+def get_connection():
+  return psycopg2.connect(
+    dbname="url_shortener",
+    user="postgres",
+    password="postgres",
+    host="localhost"
+  )
 
 def get_url(short_code):
-    return url_map.get(short_code, "URL Not Found")
+  conn = get_connection()
+  cursor = conn.cursor()
+  cursor.execute("SELECT long_url FROM urls WHERE short_code = %s", (short_code,))
+  result = cursor.fetchone()
+  cursor.close()
+  conn.close()
+  if result:
+    return result[0]
+  return "URL Not Found"
 
-print(get_url("aaa111"))
-print(get_url("bbb222"))
-print(get_url("ccc333"))
+print(get_url("abc123"))
+print(get_url("gh999"))
 print(get_url("zzz999"))
